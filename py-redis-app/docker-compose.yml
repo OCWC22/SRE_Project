@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:                                     
+    build: ./app  
+    ports:
+      - "9001:9001"
+    restart: always
+    env_file:
+      - .env
+
+  redis:                                  
+    image: redis:alpine
+    ports:
+        - '6379:6379'
